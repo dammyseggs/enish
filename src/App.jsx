@@ -1,13 +1,19 @@
 import { Route, Routes } from "react-router-dom";
 import './App.css'
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
 
 function App() {
   
 
   return (
-   <Navbar />
-  )
+    <>
+      <Navbar />
+      <Hero />
+      <About />
+    </>
+  );
 }
 
 export default App

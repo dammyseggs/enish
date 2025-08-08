@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import NavDropdown from './NavDropdown.jsx';
-import MobileDropdown from './MobileDropdown.jsx'; 
+import NavDropdown from './navbar/NavDropdown.jsx';
+import MobileDropdown from './navbar/MobileDropdown.jsx'; 
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'Contact', href: '#contact' },
   ];
 
   const locations = [

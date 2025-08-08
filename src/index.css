@@ -3,10 +3,119 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-enish-orange: #ff5722; 
+  --color-enish-orange: #ff5722;
   --color-enish-dark: #333333;
   --color-enish-light: #f4f4f4;
+
+  --animate-fadeInUp: fadeInUp 1s ease-out;
+
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px)
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0)
+    }
+  }
+
 }
+
+.text-shadow-md {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom animations */
+@layer utilities {
+  .animate-logo-scale {
+    animation: logoScale 1s ease-out;
+  }
+  .animate-hero-bounce {
+    animation: heroBounce 1s ease-out;
+  }
+  .animate-hero-slide {
+    animation: heroSlide 1s ease-out;
+  }
+  .animate-hero-pulse {
+    animation: heroPulse 1.5s ease-in-out infinite;
+  }
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+}
+
+@keyframes logoScale {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes heroBounce {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes heroSlide {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes heroPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+
 
 html {
   transition: color-scheme 0.2s;
@@ -29,5 +138,37 @@ html.dark {
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes heroPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cursorBlink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
   }
 }
