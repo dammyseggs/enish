@@ -113,10 +113,6 @@
   }
 }
 
-
-
-
-
 html {
   transition: color-scheme 0.2s;
 }
@@ -241,4 +237,8 @@ html.dark {
   100% {
     box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
   }
+}
+
+.enish-bg {
+  background-image: url(../public/enish\ flower.avif);
 }
