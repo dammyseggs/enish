@@ -8,6 +8,9 @@
   --color-enish-light: #f4f4f4;
 
   --animate-fadeInUp: fadeInUp 1s ease-out;
+  --animate-fade-in-bloom: fade-in-bloom 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  --animate-fade-out: fade-out 1s ease-out forwards;
+  --animate-pulse-slow: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
 
   @keyframes fadeInUp {
@@ -23,6 +26,21 @@
   }
 
 }
+
+@keyframes fade-in-bloom 
+         {
+          0% { opacity: 0; transform: scale(0.8); filter: blur(10px) }
+          100% { opacity: 1; transform: scale(1); filter: blur(0px) }
+        }
+ @keyframes fade-out {
+          0% { opacity: 1; visibility: visible }
+          100% { opacity: 0; visibility: hidden }
+        }
+        @keyframes fade-in-up {
+          0% { opacity: 0; transform: translateY(30px) }
+          100% { opacity: 1; transform: translateY(0) } 
+        }
+
 
 .text-shadow-md {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);

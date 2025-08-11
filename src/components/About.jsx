@@ -149,13 +149,13 @@ const AboutUs = () => {
           </h2>
 
           {/* Content Paragraphs with Staggered Animation */}
-          <div className="space-y-8 text-gray-300 text-lg leading-relaxed font-light">
+          <div className="space-y-8 text-gray-300 text-justify text-lg leading-relaxed font-light">
             <div className={`transition-all duration-1000 delay-600 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}>
               <p className="relative pl-6">
                 <span className="absolute left-0 top-2 w-2 h-2 bg-amber-400 rounded-full"></span>
-                At <span className="text-amber-300 font-semibold">Enish</span>, our story began with a simple desire: to share the rich, vibrant flavors of our Nigerian heritage with the world. Every dish is a testament to the traditions passed down through generations, prepared with authentic ingredients and a passion for culinary excellence.
+                At <span className="text-amber-300 font-semibold">Enish</span>, our story began with a simple desire: to share the rich, vibrant flavors of our Nigerian heritage with the world. We have been serving authentic Nigerian cuisine for over a decade! With ten bustling branches across the London, one in Manchester and one in Dubai, we're proud to bring the diverse and flavourful dishes of Nigeria to our customers. 
               </p>
             </div>
             
@@ -164,22 +164,12 @@ const AboutUs = () => {
             }`}>
               <p className="relative pl-6">
                 <span className="absolute left-0 top-2 w-2 h-2 bg-orange-500 rounded-full"></span>
-                We believe that food is more than sustenance; it's a celebration of culture and community. Our menu is a journey through Nigeria, from the smoky aroma of our signature <span className="text-amber-300 font-semibold">Jollof Rice</span> to the delicate texture of our <span className="text-amber-300 font-semibold">Pounded Yam</span>.
-              </p>
-            </div>
-
-            <div className={`transition-all duration-1000 delay-1000 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-            }`}>
-              <p className="relative pl-6 text-amber-100">
-                <span className="absolute left-0 top-2 w-2 h-2 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"></span>
-                We are dedicated to delivering an unparalleled dining experience that is both a tribute to our past and an invitation to our future. Welcome to the Enish family.
-              </p>
+                  With ten bustling branches across the London, one in Manchester and one in Dubai, we're proud to bring the diverse and flavourful dishes of Nigeria to our customers. Our chefs expertly prepare traditional favourites like Jollof Rice, Egusi Soup & all of your favourite dishes. At Enish, we're passionate about sharing the rich culinary traditions of Nigeria with the world. Come and join us for a truly authentic and delicious dining experience today! Welcome to the Enish family. </p>
             </div>
           </div>
           
           {/* Premium CTA */}
-          <div className={`mt-16 transition-all duration-1000 delay-1200 ${
+          <div className={`mt-13 transition-all duration-1000 delay-1200 ${
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}>
             <div className="relative inline-block group">

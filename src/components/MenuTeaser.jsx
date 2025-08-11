@@ -277,7 +277,7 @@ const MenuTeaser = () => {
         </div>
 
         {/* Premium CTA */}
-        <div className={`text-center mt-20 ${isVisible ? 'animate-fade-in-up delay-500' : 'opacity-0'}`}>
+        <div className={`text-center mt-15 ${isVisible ? 'animate-fade-in-up delay-500' : 'opacity-0'}`}>
           <div className="relative inline-block group">
             <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400 rounded-full blur-sm opacity-0 group-hover:opacity-70 transition-all duration-700"></div>
             <button className="relative bg-gradient-to-r from-amber-500 to-orange-600 text-gray-900 text-xl font-bold px-12 py-5 rounded-full transition-all duration-500 hover:scale-105 hover:shadow-[0_0_50px_rgba(245,158,11,0.4)] group-hover:from-orange-600 group-hover:to-amber-500">
