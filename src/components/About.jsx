@@ -155,7 +155,7 @@ const AboutUs = () => {
             }`}>
               <p className="relative pl-6">
                 <span className="absolute left-0 top-2 w-2 h-2 bg-amber-400 rounded-full"></span>
-                At <span className="text-amber-300 font-semibold">Enish</span>, our story began with a simple desire: to share the rich, vibrant flavors of our Nigerian heritage with the world. We have been serving authentic Nigerian cuisine for over a decade! With ten bustling branches across the London, one in Manchester and one in Dubai, we're proud to bring the diverse and flavourful dishes of Nigeria to our customers. 
+                At <span className="text-amber-300 font-semibold">Enish</span>, our story began with a simple desire: to share the rich, vibrant flavors of our Nigerian heritage with the world. We have been serving authentic Nigerian cuisine for over a decade!. 
               </p>
             </div>
             
