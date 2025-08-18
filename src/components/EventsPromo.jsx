@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import CTAButton from './CTAButton';
-import Event4 from '/Event4.mp4';
-import Event1 from '/Event1.jpg';
-import Event2 from '/Event2.jpg';
-import Event5 from '/Event5.jpg'
-import Event3 from '/Event3.jpg';
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import CTAButton from "./CTAButton";
+import Event4 from "/Event4.mp4";
+import Event1 from "/Event1.jpg";
+import Event2 from "/Event2.jpg";
+import Event5 from "/Event5.jpg";
+import Event3 from "/Event3.jpg";
 
-const EventsPromo = () =>  {
+const EventsPromo = () => {
   const [events, setEvents] = useState([]);
   const [current, setCurrent] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(1);
@@ -24,48 +24,50 @@ const EventsPromo = () =>  {
       const eventData = [
         {
           id: 1,
-          title: 'Ladies Night',
-          date: '2025-08-20T19:00:00Z',
-          description: 'Dance the night away with cocktails and Nigerian vibes.',
+          title: "Ladies Night",
+          date: "2025-08-20T19:00:00Z",
+          description:
+            "Dance the night away with cocktails and Nigerian vibes.",
           src: Event4,
-          type: 'video',
-          cta: 'Join Ladies Night',
+          type: "video",
+          cta: "Join Ladies Night",
         },
         {
           id: 2,
-          title: 'Yacht Dining Experience',
-          date: '2025-08-22T18:00:00Z',
-          description: 'Savor signature Nigerian dishes on a luxurious yacht.',
+          title: "Yacht Dining Experience",
+          date: "2025-08-22T18:00:00Z",
+          description: "Savor signature Nigerian dishes on a luxurious yacht.",
           src: Event3,
-          type: 'image',
-          cta: 'Book Yacht Dining',
+          type: "image",
+          cta: "Book Yacht Dining",
         },
         {
           id: 3,
-          title: 'Live Music Night',
-          date: '2025-08-24T20:00:00Z',
-          description: 'Enjoy Afrobeats and Nigerian cuisine under the stars.',
+          title: "Live Music Night",
+          date: "2025-08-24T20:00:00Z",
+          description: "Enjoy Afrobeats and Nigerian cuisine under the stars.",
           src: Event2,
-          type: 'image',
-          cta: 'Reserve Your Spot',
+          type: "image",
+          cta: "Reserve Your Spot",
         },
         {
           id: 4,
-          title: 'Traditional Nigerian Festival',
-          date: '2025-09-01T15:00:00Z',
-          description: 'Experience the colors and traditions of a Nigerian festival.',
+          title: "Traditional Nigerian Festival",
+          date: "2025-09-01T15:00:00Z",
+          description:
+            "Experience the colors and traditions of a Nigerian festival.",
           src: Event1,
-          type: 'image',
-          cta: 'Sign Up Now',
+          type: "image",
+          cta: "Sign Up Now",
         },
         {
           id: 5,
-          title: 'Art & Culture Expo',
-          date: '2025-09-10T19:30:00Z',
-          description: 'A curated exhibition of West African art and history.',
+          title: "Art & Culture Expo",
+          date: "2025-09-10T19:30:00Z",
+          description: "A curated exhibition of West African art and history.",
           src: Event5,
-          type: 'image',
-          cta: 'Discover More',
+          type: "image",
+          cta: "Discover More",
         },
       ];
       setEvents(eventData);
@@ -85,8 +87,8 @@ const EventsPromo = () =>  {
       }
     };
     updateCardsToShow();
-    window.addEventListener('resize', updateCardsToShow);
-    return () => window.removeEventListener('resize', updateCardsToShow);
+    window.addEventListener("resize", updateCardsToShow);
+    return () => window.removeEventListener("resize", updateCardsToShow);
   }, []);
 
   // Countdown timer
@@ -96,14 +98,19 @@ const EventsPromo = () =>  {
       setTimeLeft(
         events.reduce((acc, event) => {
           const timeDiff = new Date(event.date) - new Date();
-          acc[event.title] = timeDiff <= 0
-            ? { days: 0, hours: 0, minutes: 0, seconds: 0 }
-            : {
-                days: Math.floor(timeDiff / (1000 * 60 * 60 * 24)),
-                hours: Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-                minutes: Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)),
-                seconds: Math.floor((timeDiff % (1000 * 60)) / 1000),
-              };
+          acc[event.title] =
+            timeDiff <= 0
+              ? { days: 0, hours: 0, minutes: 0, seconds: 0 }
+              : {
+                  days: Math.floor(timeDiff / (1000 * 60 * 60 * 24)),
+                  hours: Math.floor(
+                    (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                  ),
+                  minutes: Math.floor(
+                    (timeDiff % (1000 * 60 * 60)) / (1000 * 60)
+                  ),
+                  seconds: Math.floor((timeDiff % (1000 * 60)) / 1000),
+                };
           return acc;
         }, {})
       );
@@ -126,9 +133,13 @@ const EventsPromo = () =>  {
     if (Math.abs(distance) > 50) {
       setIsSwiping(true);
       if (distance > 0) {
-        setCurrent((prev) => (prev >= events.length - cardsToShow ? 0 : prev + 1));
+        setCurrent((prev) =>
+          prev >= events.length - cardsToShow ? 0 : prev + 1
+        );
       } else {
-        setCurrent((prev) => (prev === 0 ? events.length - cardsToShow : prev - 1));
+        setCurrent((prev) =>
+          prev === 0 ? events.length - cardsToShow : prev - 1
+        );
       }
       clearTimeout(swipeTimeoutRef.current);
       swipeTimeoutRef.current = setTimeout(() => setIsSwiping(false), 500);
@@ -148,7 +159,9 @@ const EventsPromo = () =>  {
       return;
     }
     autoRotateIntervalRef.current = setInterval(() => {
-      setCurrent((prev) => (prev >= events.length - cardsToShow ? 0 : prev + 1));
+      setCurrent((prev) =>
+        prev >= events.length - cardsToShow ? 0 : prev + 1
+      );
     }, 5000);
     return () => clearInterval(autoRotateIntervalRef.current);
   }, [events.length, isSwiping, cardsToShow]);
@@ -160,7 +173,7 @@ const EventsPromo = () =>  {
       const windowHeight = window.innerHeight;
       if (rect.top <= windowHeight && rect.bottom >= 0) {
         const scrollPercent = (windowHeight - rect.top) / windowHeight;
-        const bg = sectionRef.current.querySelector('.parallax-bg');
+        const bg = sectionRef.current.querySelector(".parallax-bg");
         if (bg) {
           const offset = scrollPercent * 10;
           bg.style.transform = `translateY(${offset}px)`;
@@ -171,9 +184,9 @@ const EventsPromo = () =>  {
 
   useEffect(() => {
     if (window.innerWidth >= 480) {
-      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener("scroll", handleScroll, { passive: true });
     }
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
   // Particle effect
@@ -181,7 +194,7 @@ const EventsPromo = () =>  {
     const canvas = canvasRef.current;
     if (!canvas || window.innerWidth < 480) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     const rect = canvas.getBoundingClientRect();
@@ -248,7 +261,10 @@ const EventsPromo = () =>  {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-30"></canvas>
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 pointer-events-none z-30"
+      ></canvas>
       <div className="parallax-bg absolute inset-0 bg-gray-900 pattern-ankara opacity-20"></div>
       {/* <svg
         className="absolute top-0 w-full h-12 sm:h-16 text-amber-400 animate-wave"
@@ -265,7 +281,9 @@ const EventsPromo = () =>  {
         <div className="relative">
           <div className="overflow-hidden">
             <div
-              className={`flex transition-transform duration-500 ease-in-out ${isSwiping ? 'animate-sparkle' : ''}`}
+              className={`flex transition-transform duration-500 ease-in-out ${
+                isSwiping ? "animate-sparkle" : ""
+              }`}
               style={{
                 transform: `translateX(-${(100 / cardsToShow) * current}%)`,
               }}
@@ -277,12 +295,14 @@ const EventsPromo = () =>  {
                 >
                   <div
                     className={`bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-amber-400/70 transition-all duration-300 animate-fade-in relative group ${
-                      index >= current && index < current + cardsToShow ? 'border-2 border-amber-400 animate-sparkle' : ''
+                      index >= current && index < current + cardsToShow
+                        ? "border-2 border-amber-400 animate-sparkle"
+                        : ""
                     }`}
                     style={{ animationDelay: `${index * 200}ms` }}
                   >
-                    <div className="relative overflow-hidden aspect-video">
-                      {event.type === 'video' ? (
+                    <div className="relative overflow-hidden h-56 sm:min-h-60 lg:h-64">
+                      {event.type === "video" ? (
                         <video
                           src={event.src}
                           autoPlay={true}
@@ -307,21 +327,39 @@ const EventsPromo = () =>  {
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.2A1 1 0 0010 9.768v4.464a1 1 0 001.555.832l3.197-2.2a1 1 0 000-1.664z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M14.752 11.168l-3.197-2.2A1 1 0 0010 9.768v4.464a1 1 0 001.555.832l3.197-2.2a1 1 0 000-1.664z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
                       </svg>
                     </div>
                     <div className="p-3 sm:p-4 lg:p-6">
-                      <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-white mb-1 sm:mb-2 animate-slide-in-left">{event.title}</h3>
+                      <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-white mb-1 sm:mb-2 animate-slide-in-left">
+                        {event.title}
+                      </h3>
                       <p
                         className="text-xs sm:text-sm text-amber-400 mb-2 animate-pulse-timer"
                         aria-live="polite"
                       >
                         {timeLeft[event.title]
-                          ? `${timeLeft[event.title].days}d ${timeLeft[event.title].hours}h ${timeLeft[event.title].minutes}m ${timeLeft[event.title].seconds}s left`
-                          : 'Event Ended'}
+                          ? `${timeLeft[event.title].days}d ${
+                              timeLeft[event.title].hours
+                            }h ${timeLeft[event.title].minutes}m ${
+                              timeLeft[event.title].seconds
+                            }s left`
+                          : "Event Ended"}
                       </p>
-                      <p className="text-sm sm:text-base text-gray-300 mb-5 sm:mb-4 animate-fade-in animation-delay-200">{event.description}</p>
+                      <p className="text-sm sm:text-base text-gray-300 mb-5 sm:mb-4 animate-fade-in animation-delay-200">
+                        {event.description}
+                      </p>
                       <CTAButton
                         href="#contact"
                         label={event.cta}
@@ -342,8 +380,18 @@ const EventsPromo = () =>  {
             aria-label="Previous event slide"
             disabled={isSwiping}
           >
-            <svg className="w-5 sm:w-6 h-5 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+            <svg
+              className="w-5 sm:w-6 h-5 sm:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
           </button>
           <button
@@ -352,8 +400,18 @@ const EventsPromo = () =>  {
             aria-label="Next event slide"
             disabled={isSwiping}
           >
-            <svg className="w-5 sm:w-6 h-5 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+            <svg
+              className="w-5 sm:w-6 h-5 sm:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </button>
           <div className="flex justify-center mt-4 sm:mt-6">
@@ -361,14 +419,19 @@ const EventsPromo = () =>  {
               <button
                 key={index}
                 className={`w-3 sm:w-4 h-3 sm:h-4 rounded-full mx-1 transition-all duration-300 ${
-                  Math.floor(current / cardsToShow) === index ? 'bg-amber-400' : 'bg-gray-600'
+                  Math.floor(current / cardsToShow) === index
+                    ? "bg-amber-400"
+                    : "bg-gray-600"
                 } disabled:opacity-50`}
                 onClick={() => {
                   if (!isSwiping) {
                     setCurrent(index * cardsToShow);
                     setIsSwiping(true);
                     clearTimeout(swipeTimeoutRef.current);
-                    swipeTimeoutRef.current = setTimeout(() => setIsSwiping(false), 500);
+                    swipeTimeoutRef.current = setTimeout(
+                      () => setIsSwiping(false),
+                      500
+                    );
                   }
                 }}
                 aria-label={`Event slide ${index + 1}`}
@@ -380,6 +443,6 @@ const EventsPromo = () =>  {
       </div>
     </section>
   );
-}
+};
 
 export default EventsPromo;
