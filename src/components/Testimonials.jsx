@@ -271,7 +271,7 @@ const Testimonials = () => {
           </div>
 
           {/* Navigation Controls */}
-          <button
+          {/* <button
             onClick={() => handleSwipe('prev')}
             disabled={isAnimating}
             className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 disabled:opacity-50 disabled:scale-100"
@@ -291,7 +291,7 @@ const Testimonials = () => {
             <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
             </svg>
-          </button>
+          </button> */}
 
           {/* Progress Indicators */}
           <div className="flex justify-center mt-8 space-x-3">
