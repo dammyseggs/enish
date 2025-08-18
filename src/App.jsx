@@ -7,6 +7,7 @@ import About from "./components/About";
 import MenuTeaser from "./components/MenuTeaser";
 import Preloader from "./components/PreLoader";
 import EventsPromo from "./components/EventsPromo";
+import Testimonials from "./components/Testimonials";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,6 +40,7 @@ useEffect(() => {
         <About />
         <MenuTeaser />
         <EventsPromo />
+        <Testimonials />
       </div>
     </div>
   );
