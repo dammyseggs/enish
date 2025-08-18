@@ -257,6 +257,15 @@ html.dark {
   }
 }
 
+@keyframes pulseTimer {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(251, 191, 36, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.8);
+  }
+}
+
 .enish-bg {
   background-image: url(../public/enish\ flower.avif);
 }

@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import MenuTeaser from "./components/MenuTeaser";
 import Preloader from "./components/PreLoader";
+import EventsPromo from "./components/EventsPromo";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,6 +38,7 @@ useEffect(() => {
         <Hero />
         <About />
         <MenuTeaser />
+        <EventsPromo />
       </div>
     </div>
   );
